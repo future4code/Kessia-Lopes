@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Meu nome é Késsia
 Tenho 27 anos
 Moro em Cabo Frio, Rio de Janeiro
@@ -6,3 +7,12 @@ Resolvi fazer o curso prs buscar me encontrar na area que escolhi trabalhar.
 Em dois dias de curso estou vendo coisas que não vi até agora na faculdade, o que me motivou e mostrou que fiz a coisa certa.
 Eu gosto de viajar, jogar futsal e de fazer alguns dsigners por puro hobbie(nunca fiz curso, aprendo fuçando)
 resumidamente essa sou eu.
+=======
+Kessia Lopes
+Tenho 27 anos
+Moro em Cabo frio, Rio de Janeiro
+Curso Sistemas de Informação  e estava insatisfeita coma graduação, por isso entrei no curso, para tentar me encontrar na area que pretendo trabalhar
+Nesses 2 dias aprendi coisas que nunca vi na faculdade, estou adorando, fiz a escolha certa.
+Gosto de viajar, ver series, jogar futsal e um pouco de edição de imagem por robbie.
+;)
+>>>>>>> e7777370ddc3406b1061320fe47ebbece7bb53bd
