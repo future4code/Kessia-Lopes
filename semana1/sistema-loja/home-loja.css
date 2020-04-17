@@ -1,0 +1,34 @@
+.menu-canto{
+    background-color: whitesmoke;
+    display: inline-block;
+    padding-bottom: 295px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border-right: 3px solid pink;
+}
+.menu-cima{
+    background-color: whitesmoke;
+    display: block;
+    
+
+}
+h2{
+    margin-left: 580px;
+    display: inline;
+    
+    
+}
+p{
+    margin-left: 540px;
+} 
+.menu-canto>a{
+    color: black;
+    padding: 30px;
+    border-bottom: 13px solid black;
+    display: block;
+    }
+    a:hover{
+        background-color: pink;
+        color: white;
+    
+    }

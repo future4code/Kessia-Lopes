@@ -1,0 +1,15 @@
+table,th,tr,td{
+    border: 2px solid silver;
+    color: black;
+    background-color: pink;
+    padding-left: 20px;
+        
+}
+table{
+    margin-right: 500px;
+}
+
+
+h3{
+    margin-top: 255px;
+}
