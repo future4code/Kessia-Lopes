@@ -28,7 +28,7 @@ button:focus {
 }
 
 img {
-    width: 50px;
+    width: 30px;
 }
 
 div>p:first-child {
@@ -100,9 +100,11 @@ div:last-child {
 table {
     width: 60%;
     text-align: center;
+    margin: auto;
 }
 table,h2{
     font-family: 'roboto';
+    
 }
 
 td button {
@@ -133,6 +135,9 @@ td button:active{
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    margin-left: 50%;
+    margin-top: 10%;
+
 }
 
 #back-button:hover {
