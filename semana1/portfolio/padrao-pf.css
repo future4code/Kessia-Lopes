@@ -15,3 +15,27 @@ h1{
     padding: 0px;
 
 }
+#menu ul{
+    background-color:black;
+    display: block;
+    border: 2px solid cornflowerblue;
+    border-radius: 50px;
+}
+#menu ul li{
+    display: inline-block;
+    padding: 10px 65px;
+    
+    
+}
+#menu ul li a{
+ color:cornflowerblue;
+ text-decoration: none;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#menu ul li a:hover{
+    background-color: cornflowerblue;
+    display: block;
+    padding: 0px 3px 0px 3px;
+    color: black;
+    border-radius: 20px;
+}

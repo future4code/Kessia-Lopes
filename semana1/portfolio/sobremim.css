@@ -1,0 +1,11 @@
+h2,p,table{
+    color: cadetblue;
+    font-family: 'calibri';
+    margin-top: 30px;
+    text-align: justify;
+    width: 300px;
+    margin-left: 500px;
+    border-bottom: 6px solid cornflowerblue;
+    text-shadow: 0 1px 0 gray;
+    
+}
