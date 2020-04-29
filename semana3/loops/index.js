@@ -26,7 +26,7 @@ R: 10,15,25,30
 c. Qual seria imprimido no console se a variável numero tivesse o valor de 3? E se tivesse o valor de 4?
 R: Por 3 - 12,15,18,21,27,30. Por 4 - 12.
 
-Exercício 3*
+Exercício 3*/
 
 let original=[15,34,12,45,7,43,90,2,33,56]
 let maiorNumero=original[0]
@@ -45,8 +45,8 @@ for(let i =0; i< original.length; i++){
     }
 }
 console.log(`O maior numero é ${maiorNumero} e o menor é ${menorNumero}`)
-// Resposta a.
-"O maior número é 90 e o menor é 2" *
+/* Resposta item a.
+"O maior número é 90 e o menor é 2" */
 
 let original=[15,34,12,45,7,43,90,2,33,56]
 let novoArray=[]
@@ -57,8 +57,8 @@ for(let i=0; i<original.length; i++){
 
 }
 console.log(novoArray)
-//Resposta b.
-[1.5, 3.4, 1.2, 4.5, 0.7, 4.3, 9, 0.2, 3.3, 5.6]*
+/*Resposta item b.
+[1.5, 3.4, 1.2, 4.5, 0.7, 4.3, 9, 0.2, 3.3, 5.6]*/
 
 let original=[15,34,12,45,7,43,90,2,33,56]
 let novoArray=[]
@@ -71,21 +71,32 @@ for(let numero of original){
 
 }
 console.log(novoArray)   
-//Resposta c.
+/*Resposta item c.
 [34, 12, 90, 2, 56]*/
 
 let original=[15,34,12,45,7,43,90,2,33,56]
 let novoArray=[]
-
-
+i=0
+let elemento=novoArray[0]
 
 for(let numeros of original){
     novoArray.push(numeros) 
-    
-    console.log("O elemento do index",novoArray," é o")
- 
+      let posicao=[i]
+      elemento=novoArray[i]
+    console.log("O elemento do index",posicao," é o", elemento)
+    i++
     
 
 }
-
+/*Resposta item d.
+ O elemento do index [0]  é o 15
+ O elemento do index [1]  é o 34
+ O elemento do index [2]  é o 12
+ O elemento do index [3]  é o 45
+ O elemento do index [4]  é o 7
+ O elemento do index [5]  é o 43
+ O elemento do index [6]  é o 90
+ O elemento do index [7]  é o 2
+ O elemento do index [8]  é o 33
+ O elemento do index [9]  é o 56*/
 
