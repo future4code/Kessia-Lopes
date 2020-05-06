@@ -1,8 +1,9 @@
 body{
-    /*background-image: image("psico.jpg");*/
+    background-image: url("psico.jpg");
     margin: 0;
     padding: 0;
     display: flex;
+
 }
 #container{
     display: flex;
@@ -12,22 +13,39 @@ body{
     padding: 3%;
     border: 1px solid pink;
     flex-direction: column;
+    background-color:cornsilk;
 }
 h1{
     text-align: center;
     font-family: 'roboto';
     color: salmon;
 }
-.dia,#segunda,#terca,#quarta,#quinta,#sexta,#sabado,#domino{
+#segunda,#terca,#quarta,#quinta,#sexta,#sabado,#domino{
     display: inline-block;
     height: 100%;
     border: 1px solid pink;
 }
 ul{
-    border: 1px solid pink;;
+    border: 1px solid pink;
+
 }
 p{
     font-family: 'roboto';
     color: black;
     background-color: salmon;
+}
+li{
+    font-family: 'roboto';
+}
+#addarea{
+    display: inline-flex;
+    margin: 0%;
+    font-family: 'roboto';
+    
+}
+label{
+    background-color: salmon;
+}
+button,input,select{
+    border: 1px solid salmon;
 }

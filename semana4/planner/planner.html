@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="planner.css">
-    <script src="planner.js"></script>
+    <script src="planner.js" defer></script>
     <title>Document</title>
 </head>
 <body>
     <main id="container">
-        <section>
-        <select>
+        <h1>Planner</h1>
+        <section id="addarea">
+            <label>Nova Tarefa</label>
+            <input type="text" name="tarefa" id="entrada"></input>
+          <select id="dia">
             <option value="segunda">Segunda-Feira</option>
             <option value="terca">Terça-Feira</option>    
             <option value="quarta">Quarta-Feira</option>
             <option value="quinta">Quinta-Feira</option>
             <option value="sexta">Sexta-Feira</option>
             <option value="sabado">Sabado</option>
-            <option value="doming">Domingo</option>
-        </select>
-        <input type="text"></input><button>adicionar tarefa</button>
+            <option value="domingo">Domingo</option>
+          </select>
+            <button onclick="novaTarefa()">adicionar tarefa</button>
         </section>
-        <h1>Planner</h1>
             <section id="segunda"><p>Segunda-Feira</p>
                 <ul>
 
