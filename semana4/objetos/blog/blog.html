@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="blog.js"defer></script>
+    <link href="blog.css" type="text/css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+        <form id="form">
+           <legend>Post</legend>
+           <label>Titulo</label>
+           <input type="text" name="title" id="titulo"/>
+           <label>Conteudo</label>
+           <textarea id="texto"></textarea>
+           <label>Autor</label>
+           <input type="text" name="nome" id="nome"/>
+           <button type="submit" onclick=pegarInfo(event)>Postar</button>
+        </form>
+        <section id="feed">
+
+        </section>
+    </main>    
+  </body>
+</html>
