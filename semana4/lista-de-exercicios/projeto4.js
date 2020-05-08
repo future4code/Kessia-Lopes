@@ -6,4 +6,15 @@ para a cotação informada pelo usuário. Na cotação atual o console mostraria
 Para a variavel novoMontante o console mostra o valor de 165. E para a variável segundoMontante, é retornado um alert com a mensagem "TIPO DE INVESTIMENTO INFORMADO INCORRETO"
 
 3-R: É um programa que separa o primeiro array em dois, um de numeros pares eoutro de numeros impares.
-Oprimeiro console.log imprime 14, que é o tamanho do array original. O segundo console log retorna 6, que é o tamanho do array1 e o terceiroimprime 8, que é o tamanho do array 2
+Oprimeiro console.log imprime 14, que é o tamanho do array original. O segundo console log retorna 6, que é o tamanho do array1 e o terceiroimprime 8, que é o tamanho do array 2.
+
+4-R:
+
+Exercícios Lógica de programação:
+1-R:
+2-a:false
+b:true
+c:true
+d:false
+e:true
+3-*/
