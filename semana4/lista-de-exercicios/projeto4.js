@@ -26,4 +26,16 @@ while(i < quantidadeDeNumerosPares) {
 }
 R:Não roda, entra em looping, poruq eo 0*2 continua sendo 0, por isso precisa da adição do 1 pra rodar.
 
-4-*/
+4-
+function triagular(a,b,c){
+  if(a===b && b===c){
+    console.log("Triangulo Equilátero")
+  }
+    else if((a===b && b!==c)||(a===c && b!==a)||(c===b&&b!==a)){
+    console.log("Triangulo Isóceles")
+    }
+  if (a!==b && b!==c && a!==c){
+    console.log("Triangulo Escaleno")
+  }
+}
+triagular(2,7,5)*/
