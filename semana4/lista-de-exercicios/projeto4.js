@@ -17,4 +17,13 @@ b:true
 c:true
 d:false
 e:true
-3-*/
+3-
+const quantidadeDeNumerosPares= 5
+let i = 0
+while(i < quantidadeDeNumerosPares) {
+  console.log(i*2)
+  i=i+1
+}
+R:Não roda, entra em looping, poruq eo 0*2 continua sendo 0, por isso precisa da adição do 1 pra rodar.
+
+4-*/
