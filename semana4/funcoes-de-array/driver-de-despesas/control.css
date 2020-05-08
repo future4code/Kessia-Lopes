@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'roboto';
+    background-color: orange;
+    background-image: url('sunflower.jpg');
+}
+h1{
+    text-align: center;
+}
+section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 2%;
+    
+}
+#cadastro{
+    background-color: gold;
+    padding: 2%;
+    border-radius: 10px;
+    border: 1px solid black;
+    
+}
+#detalhes{
+    
+    background-color: black;
+    color: orange;
+    border-radius: 2%;
+    border:1px solid orange;
+}
+#extrato{
+    background-color: goldenrod;
+    border-bottom: 8px solid orange;
+}
+input{
+    border-bottom:2px solid orangered;    
+}
+select{
+    background-color: khaki;
+    
+}
+#btn-cadastrar{
+    background-color: black;
+    color: goldenrod;
+    padding: 1%;
+    margin-top: 1%;
+    margin-left: 50%;
+    border-radius: 10px;
+    border-color: goldenrod;
+}
+#btn-filtrar,#btn-limpar{
+    background-color: black;
+    color: goldenrod;
+    
+    border-radius: 10px;
+    border-color: goldenrod;
+
+}

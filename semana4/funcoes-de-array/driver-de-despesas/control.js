@@ -25,9 +25,27 @@ function cadastrar(event){
 }
 function filtrar(event){
     event.preventDefault()
-    let inputValor = document.getElementById('valor')
-    console.log(inputValor.value)
-    let selectDespesa = document.getElementById('despesa-cadastro')
-    let inputDescricao = document.getElementById('descricao')
-    console.log(inputDescricao.value)
+     selectDetalhes= document.getElementById('despesa-detahe')
+    let valorMin= document.getElementById('valor-minimo')
+    let valorMax= document.getElementById('valor-maximo')
+    let valores= listaDespesas.filter((cadastro)=>{
+        if(valorMin!=='' && valorMax!==''){
+             if( (cadastro.selectDespesa.value===selectDetalhes.value && cadastro.inputValor.value== valorMin,value) ||
+            cadastro.inputValor.value==valorMax.value)
+                return true;
+        }  
+         else {
+                return false;
+        }
+    })
+    document.getElementById('listar').innerHTML+="<li>"+ valores+"</li>"
+}
+function limpar(event){
+    event.preventDefault()
+    document.getElementById('valor-minimo').value=""
+    document.getElementById('valor-maximo').value=""
+}
+function extrato(event){
+    event.preventDefault()
+    document.getElementById('imprimir').innerHTML+="<li>"+listaDespesas+"</li>"
 }

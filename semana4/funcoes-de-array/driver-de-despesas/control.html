@@ -38,12 +38,18 @@
                 <input title="Valor maximo:" type="number" placeholder="Digite valor max" id="valor-maximo"/>
                 <label>Valor Min.</label>
                 <input title="Valor minimo:" type="number" placeholder="Digite valor min" id="valor-minimo"/>
-                <button id="btn-filtrar">Filtrar</button>
-                <button id="btn-limpar">Limpar</button>
+                <button id="btn-filtrar" onclick=filtrar(event)>Filtrar</button>
+                <button id="btn-limpar" onclick=limpar(event)>Limpar</button>
             </form>
+            <ul id="listar">
+
+            </ul>
         </section>
         <section id="extrato">
             <h4>Extrato</h4>
+            <ul id="imprimir">
+
+            </ul>
         </section>
     
 </body>
