@@ -1,0 +1,17 @@
+#ftp{
+    width: 200px;
+    border: 5px solid cornflowerblue;
+    border-radius: 100px;
+    margin: 100px 660px;
+    
+}
+ h2,h3{
+     color: cornflowerblue;
+     text-align: center;
+     text-decoration: none;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     margin-top: -60px;
+ }
+
+
+
