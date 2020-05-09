@@ -92,4 +92,13 @@ Exercícios de Objetos
    return retangulo
  }
  console.log(criaRetangulo(2,3))
- 
+3-*
+const transformers={}
+transformers.nome= "Transformers 2: A vingança dos derrotados"
+transformers.ano= 2009
+transformers.diretor="Michael Bay"
+transformers.ator1="Shia LaBeouf"
+transformers.atriz2="Megan Fox"
+transformers.ator3="John Turturro"
+
+console.log(`Venha assistir ao filme ${transformers.nome}, de ${transformers.ano}, dirigido por ${transformers.diretor} e estrelado por ${transformers.ator1}, ${transformers.atriz2}, ${transformers.ator3}`)
