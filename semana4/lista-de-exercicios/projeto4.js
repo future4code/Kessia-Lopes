@@ -102,3 +102,16 @@ transformers.atriz2="Megan Fox"
 transformers.ator3="John Turturro"
 
 console.log(`Venha assistir ao filme ${transformers.nome}, de ${transformers.ano}, dirigido por ${transformers.diretor} e estrelado por ${transformers.ator1}, ${transformers.atriz2}, ${transformers.ator3}`)
+4-*/
+const user={
+  nome: "Angelica",
+  idade: 25,
+  email:"angel@hotmail.com",
+  endereco:"Rua Pedro Peres Garcia, 11"
+}
+const newUser={
+  ...user,
+  nome:'ANONIMO'
+}
+console.log(user)
+console.log(newUser)
