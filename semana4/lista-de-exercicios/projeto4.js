@@ -65,4 +65,17 @@ triagular(2,7,5)
  diferenca=numero1-numero2
  console.log(`A diferença entre eles é ${diferenca}`)
 
-Exercícios de funções*/
+Exercícios de funções
+
+1-
+
+2-*
+const alerta = function(){
+  alert("Hello Future4")
+}
+console.log(alerta())
+
+Exercícios de Objetos
+
+1- Arrays são conjuntos de elementos posicionados com indices. Objetos são elementos que armazenam informações relacionadas a eles.
+2-*/
