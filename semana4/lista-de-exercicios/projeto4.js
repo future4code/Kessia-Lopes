@@ -78,4 +78,18 @@ console.log(alerta())
 Exercícios de Objetos
 
 1- Arrays são conjuntos de elementos posicionados com indices. Objetos são elementos que armazenam informações relacionadas a eles.
-2-*/
+2-*
+ function criaRetangulo(lado1, lado2){
+   let largura=lado1;
+   let altura=lado2;
+
+   const retangulo={
+     largura: largura,
+     altura: altura,
+     perimetro: 2*(largura + altura),
+     area: largura*altura
+   }
+   return retangulo
+ }
+ console.log(criaRetangulo(2,3))
+ 
