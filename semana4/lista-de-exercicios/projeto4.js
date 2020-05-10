@@ -166,7 +166,7 @@ function triplo(numero){
 
 numeros.forEach(triplo)
 
-C-*/
+C-*
 const numeros= [1,2,3,4,5,6]
 numeros.forEach((numero,ind,array )=> {
   if(numero%2===0){
@@ -178,4 +178,37 @@ else{
 }
 
 });
+
+3A-*
+
+const pessoas = [
+	{ nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}
+]
+const pessoasAptas = pessoas.filter((pessoa,index,array)=>{
+  if((pessoa.idade >= 14 && pessoa.idade< 60) && pessoa.altura>=1.5){
+   return true
+ }
+ else{
+   return false
+ }
+
+})
+console.log(pessoasAptas)
+//B-
+const pessoasNaoAptas = pessoas.filter((pessoa,index,array)=>{
+  if((pessoa.idade < 14 || pessoa.idade> 60) || pessoa.altura<1.5){
+   return true
+ }
+ else{
+   return false
+ }
+
+})
+console.log(pessoasNaoAptas)
+
 
