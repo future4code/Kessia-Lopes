@@ -148,3 +148,34 @@ const menoresDeIdade = pessoas.filter((pessoa,index,array)=>{
 })
 console.log(menoresDeIdade)
 
+2A-*
+const numeros= [1,2,3,4,5,6]
+
+function dobro(numero){
+  console.log(numero*2)
+}
+
+numeros.forEach(dobro)
+
+B-*
+const numeros= [1,2,3,4,5,6]
+
+function triplo(numero){
+  console.log(numero*3)
+}
+
+numeros.forEach(triplo)
+
+C-*/
+const numeros= [1,2,3,4,5,6]
+numeros.forEach((numero,ind,array )=> {
+  if(numero%2===0){
+  console.log(`${numero} é par`)
+}
+else{
+   console.log(`${numero} é impar`)
+   
+}
+
+});
+
