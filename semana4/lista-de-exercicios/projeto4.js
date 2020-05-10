@@ -102,7 +102,7 @@ transformers.atriz2="Megan Fox"
 transformers.ator3="John Turturro"
 
 console.log(`Venha assistir ao filme ${transformers.nome}, de ${transformers.ano}, dirigido por ${transformers.diretor} e estrelado por ${transformers.ator1}, ${transformers.atriz2}, ${transformers.ator3}`)
-4-*/
+4-*
 const user={
   nome: "Angelica",
   idade: 25,
@@ -114,4 +114,37 @@ const newUser={
   nome:'ANONIMO'
 }
 console.log(user)
-console.log(newUser)
+console.log(newUser)*
+
+Exercicios de funções de array
+1A-*
+
+const pessoas=[
+	{ nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 },
+]
+
+const pessoasAdultas = pessoas.filter((pessoa,index,array)=>{
+   if(pessoa.idade >= 20){
+    return true
+  }
+  else{
+    return false
+  }
+
+})
+console.log(pessoasAdultas)
+//B-
+const menoresDeIdade = pessoas.filter((pessoa,index,array)=>{
+  if(pessoa.idade < 20){
+   return true
+ }
+ else{
+   return false
+ }
+
+})
+console.log(menoresDeIdade)
+
