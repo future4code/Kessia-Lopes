@@ -6,7 +6,7 @@ import perfilDois from './img/image4.jpg'
 import perfilTres from './img/image3.jpg'
 import postagemUm from './img/imgage1.jpg'
 import postagemDois from './img/image2.jpg'
-import postagemTres from './img/image5.jpg'
+import postagemTres from './img/image6.jpg'
 
 class App extends React.Component {
   render() {
