@@ -6,6 +6,11 @@ import Escolaridade from './componentes/Escolaridade.js';
 import Cursos from './componentes/Cursos.js';
 import Final from './componentes/Final.js';
 
+const Botao = styled.button`
+background-color:black;
+color:white;
+padding: 3px;
+`
 class App extends React.Component {
   state={
     etapa:1,
@@ -31,7 +36,7 @@ class App extends React.Component {
   return (
     <div className="App">
       {this.renderizaEtapa()}
-      <button onClick={this.clickChangeState}>Próxima Etapa</button>
+      <Botao onClick={this.clickChangeState}>Próxima Etapa</Botao>
     </div>
   );
   };
