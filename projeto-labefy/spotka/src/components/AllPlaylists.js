@@ -4,8 +4,28 @@ import axios from 'axios';
 
 export default class AllPlayists extends React.Component{
     state={
-        playlists:[],  
+        newPlaylist:"",
+        playlists:[]
+    }
+    createPlaylist =()=>{
+        const body ={
+            name: this.state.newPlaylist
+        };
+        axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
+        ,body,{
+            headers:{Authorization:"kessia-lopes-mello"}
+        }).then(response =>{
+            console.log(response);
+            this.setState({newPlaylist:""});
+            alert("Playist criada.");
+        }).catch(err=>{
+            console.log(err)
+            alert("Playlist não pode ser criada.");
+        }) 
     };
+    onChangeInput = (e)=>{
+        this.setState({newPlaylist:e.target.value})
+    }
     componentDidMount=()=>{
         this.getPlaylists();
     }
@@ -34,9 +54,19 @@ export default class AllPlayists extends React.Component{
         });
     }
     render(){
+        const loading = this.state.playlists.length === 0 && <h3>carregando...</h3>
         return(
             <div>
-                <h1>Suas Playlists</h1>
+                <h1>Spotika</h1>
+                <hr />
+                <input
+                value={this.state.newPlaylist}
+                placeholder={"Playlist"}
+                onChange={this.onChangeInput}/>
+                <button onClick={this.createPlaylist}>Criar Playlist</button>
+                <div>
+                <h2>Suas Playlists</h2>
+                {loading}
                 <ul>
                         {this.state.playlists.map(playlist =>{
                             return <li key={playlist.id}><strong>Nome da playlist: </strong>{playlist.name} <button onClick={()=>this.deletePlaylist(playlist.id)}>x</button> <p><strong>id da playlist:</strong></p> {playlist.id}<hr /></li>
@@ -44,6 +74,8 @@ export default class AllPlayists extends React.Component{
                         
                 </ul>
             </div>
-        );
-        }
+
+            </div>
+        )
+    };
 }
