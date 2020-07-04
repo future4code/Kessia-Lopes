@@ -3,7 +3,22 @@ import './App.css';
 
 import axios from 'axios';
 import styled from 'styled-components';
+
 import {ContainerTasks} from './styled/styles.js';
+import {Button, TextField, InputLabel, Select, MenuItem} from '@material-ui/core';
+import {CssBaseline} from '@material-ui/core';
+
+const FormContainer = styled.form`
+display: grid;
+grid-auto-flow: column;
+gap: 10px;
+margin: 25px;
+`
+const Delete = styled.span`
+color: red;
+font-size: 10px;
+`
+
 function App() {
   const [task, setTask]= useState('')
   const [day, setDay] = useState('')
@@ -30,10 +45,11 @@ function App() {
     try{
       const response = await axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-mello-kessia`, body);
       console.log(response);
-      setTask('');
       setReload(reload + 1)
+      setTask('');
     } catch(err){
       console.log(err)
+      
     }
     
   };
@@ -51,85 +67,101 @@ function App() {
     console.log(listTasks)
   },[reload]);
 
+  const deleteTask = async(taskId)=>{
+  
+   axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-mello-kessia/${taskId}`)
+    .then(()=>{
+      getListTasks();
+    }).catch(err=>{
+      console.log("err")
+    })
+  };
+
 
   return (
     <div className="App">
-      <div>
+      <CssBaseline />
+      <h1>
         Planner
-      </div>
-      <form onSubmit={createTask}>
-        <label>
-          Nova tarefa: 
-        </label>
-        <input required placeholder='Nova Tarefa' onChange ={handleInputValue}/>
-        <label>
-          Dia: <select required onChange = {handleSelectValue}>
-            <option value =""></option>
-            <option value ="Domingo">Domingo</option>
-            <option value ="Segunda">Segunda-Feira</option>
-            <option value ="Terça">Terça-Feira</option>
-            <option value ="Quarta">Quarta-Feira</option>
-            <option value ="Quinta">Quinta-Feira</option>
-            <option value ="Sexta">Sexta-Feira</option>
-            <option value ="Sabado">Sábado</option>
-          </select>
-         </label>
-         <button type ="submit">Criar Tarefa</button>
-      </form>
+      </h1>
+      <FormContainer onSubmit={createTask}>
+        <TextField label={"Nova Tarefa"} required  onChange ={handleInputValue}/>
+        <InputLabel id="select-day">Dia:</InputLabel> 
+        <Select labelId="select-day" required onChange = {handleSelectValue}>
+            <MenuItem value =""></MenuItem>
+            <MenuItem value ="Sunday">Domingo</MenuItem>
+            <MenuItem value ="Monday">Segunda-Feira</MenuItem>
+            <MenuItem value ="Thuesday">Terça-Feira</MenuItem>
+            <MenuItem value ="Wesnesday">Quarta-Feira</MenuItem>
+            <MenuItem value ="Thursday">Quinta-Feira</MenuItem>
+            <MenuItem value ="Friday">Sexta-Feira</MenuItem>
+            <MenuItem value ="Saturday">Sábado</MenuItem>
+          </Select>
+         
+         <Button variant={'contained'} color={'secondary'}type ="submit">Criar Tarefa</Button>
+      </FormContainer>
       <ContainerTasks>
           <div>Domingo
             <hr  />
             {listTasks.map((tasks)=>{
-              if(tasks.day==='Domingo'){
-                return <p key={tasks.id}>{tasks.text}</p>
+              if(tasks.day==='Sunday'){
+                return <ul><li key={tasks.id}>{tasks.text}</li>
+                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete>
+                 </ul> 
+                
               }
             })}
           </div>
           <div>Segunda-Feira
           <hr  />
             {listTasks.map((tasks)=>{
-              if(tasks.day==='Segunda'){
-                return <p key={tasks.id}>{tasks.text}</p>
+              if(tasks.day==='Monday'){
+                return <ul><li key={tasks.id}>{tasks.text}</li>
+                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete></ul>
               }
             })}
           </div>
           <div>Terça-Feira
             <hr  />
             {listTasks.map((tasks)=>{
-              if(tasks.day==='Terça'){
-                return <p key={tasks.id}>{tasks.text}</p>
+              if(tasks.day==='Thuesday'){
+                return <ul><li key={tasks.id}>{tasks.text}</li>
+                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete></ul>
               }
             })}
           </div>
           <div>Quarta-Feira
             <hr  />
             {listTasks.map((tasks)=>{
-              if(tasks.day==='Quarta'){
-                return <p key={tasks.id}>{tasks.text}
-           </p>   }
+              if(tasks.day==='Wenesday'){
+                return <ul><li key={tasks.id}>{tasks.text}</li>
+                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete></ul>   }
             })}
           </div>
           <div>Quinta-Feira
             <hr  />
             {listTasks.map((tasks)=>{
-              if(tasks.day==='Quinta'){
-                return <p key={tasks.id}>{tasks.text}</p>
+              if(tasks.day==='Thursday'){
+                return <ul><li key={tasks.id}>{tasks.text}</li>
+                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete></ul>
               }
             })}
           </div>
           <div>Sexta-Feira
             <hr  />
             {listTasks.map((tasks)=>{
-              if(tasks.day==='Sexta'){
-                return <p key={tasks.id}>{tasks.text}</p>  
+              if(tasks.day==='Friday'){
+                return <ul><li key={tasks.id}>{tasks.text}</li>
+                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete></ul>  
               }
             })}
           </div>
           <div>Sábado
             <hr  />
             {listTasks.map((tasks)=>{
-              if(tasks.day==='Sabado'){
-                return <p key={tasks.id}>{tasks.text}</p>
+              if(tasks.day==='Saturday'){
+                return <ul><li key={tasks.id}>{tasks.text}</li>
+                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete></ul>
               }
             })}
           </div>
