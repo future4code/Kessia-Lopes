@@ -17,6 +17,12 @@ margin: 25px;
 const Delete = styled.span`
 color: red;
 font-size: 10px;
+cursor: pointer;
+`
+const Edit = styled.span`
+color: blue;
+font-size: 10px;
+cursor: pointer;
 `
 
 function App() {
@@ -45,8 +51,10 @@ function App() {
     try{
       const response = await axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-mello-kessia`, body);
       console.log(response);
-      setReload(reload + 1)
       setTask('');
+      setDay('');
+      setReload(reload + 1)
+      
     } catch(err){
       console.log(err)
       
@@ -77,6 +85,15 @@ function App() {
     })
   };
 
+  const editTask = async(taskId) =>{
+    axios.put(`https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-mello-kessia/${taskId}`)
+    .then(()=>{
+      getListTasks();
+    }).catch(err=>{
+      console.log('err')
+    })
+  };
+// 
 
   return (
     <div className="App">
@@ -85,14 +102,14 @@ function App() {
         Planner
       </h1>
       <FormContainer onSubmit={createTask}>
-        <TextField label={"Nova Tarefa"} required  onChange ={handleInputValue}/>
-        <InputLabel id="select-day">Dia:</InputLabel> 
-        <Select labelId="select-day" required onChange = {handleSelectValue}>
+        <TextField label={"Nova Tarefa"} placeholder="Nova Tarefa" required  onChange ={handleInputValue}/>
+        <InputLabel id="select-day">Dia:</InputLabel>
+        <Select labelId="select-day" placeholder="Dia" required onChange = {handleSelectValue}>
             <MenuItem value =""></MenuItem>
             <MenuItem value ="Sunday">Domingo</MenuItem>
             <MenuItem value ="Monday">Segunda-Feira</MenuItem>
             <MenuItem value ="Thuesday">Terça-Feira</MenuItem>
-            <MenuItem value ="Wesnesday">Quarta-Feira</MenuItem>
+            <MenuItem value ="Wenesday">Quarta-Feira</MenuItem>
             <MenuItem value ="Thursday">Quinta-Feira</MenuItem>
             <MenuItem value ="Friday">Sexta-Feira</MenuItem>
             <MenuItem value ="Saturday">Sábado</MenuItem>
@@ -107,6 +124,7 @@ function App() {
               if(tasks.day==='Sunday'){
                 return <ul><li key={tasks.id}>{tasks.text}</li>
                  <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete>
+                 <Edit onClick ={()=>editTask(tasks.id)}> editar</Edit>
                  </ul> 
                 
               }
@@ -117,7 +135,9 @@ function App() {
             {listTasks.map((tasks)=>{
               if(tasks.day==='Monday'){
                 return <ul><li key={tasks.id}>{tasks.text}</li>
-                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete></ul>
+                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete>
+                 <Edit onClick ={()=>editTask(tasks.id)}> editar</Edit>
+                 </ul>
               }
             })}
           </div>
@@ -126,7 +146,9 @@ function App() {
             {listTasks.map((tasks)=>{
               if(tasks.day==='Thuesday'){
                 return <ul><li key={tasks.id}>{tasks.text}</li>
-                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete></ul>
+                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete>
+                 <Edit onClick ={()=>editTask(tasks.id)}> editar</Edit>
+                 </ul>
               }
             })}
           </div>
@@ -135,7 +157,9 @@ function App() {
             {listTasks.map((tasks)=>{
               if(tasks.day==='Wenesday'){
                 return <ul><li key={tasks.id}>{tasks.text}</li>
-                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete></ul>   }
+                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete>
+                 <Edit onClick ={()=>editTask(tasks.id)}> editar</Edit>
+                 </ul>   }
             })}
           </div>
           <div>Quinta-Feira
@@ -143,7 +167,9 @@ function App() {
             {listTasks.map((tasks)=>{
               if(tasks.day==='Thursday'){
                 return <ul><li key={tasks.id}>{tasks.text}</li>
-                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete></ul>
+                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete>
+                 <Edit onClick ={()=>editTask(tasks.id)}> editar</Edit>
+                 </ul>
               }
             })}
           </div>
@@ -152,7 +178,9 @@ function App() {
             {listTasks.map((tasks)=>{
               if(tasks.day==='Friday'){
                 return <ul><li key={tasks.id}>{tasks.text}</li>
-                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete></ul>  
+                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete>
+                 <Edit onClick ={()=>editTask(tasks.id)}> editar</Edit>
+                 </ul>  
               }
             })}
           </div>
@@ -161,7 +189,9 @@ function App() {
             {listTasks.map((tasks)=>{
               if(tasks.day==='Saturday'){
                 return <ul><li key={tasks.id}>{tasks.text}</li>
-                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete></ul>
+                 <Delete onClick={()=>deleteTask(tasks.id)}>delete</Delete>
+                 <Edit onClick ={()=>editTask(tasks.id)}> editar</Edit>
+                 </ul>
               }
             })}
           </div>
