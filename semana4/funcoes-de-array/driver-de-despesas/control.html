@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="control.js"defer></script>
+    <link href="control.css" type="text/css" rel="stylesheet"/>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Controlador de despesas</h1>
+        <section id="cadastro">
+            <h2>Cadastro de Despesas</h2>
+                <form id="formulario-cadastro">
+                    <label>Valor:</label>
+                    <input title="Valor:" type="number" placeholder="Digite o valor" id="valor"/>
+                    <label>Despesa:</label>
+                    <select id="despesa-cadastro">
+                         <option id="casa-cadastro">Casa</option>
+                         <option id="carro-cadastro">Carro</option>
+                         <option id="viagem-cadastro">Viagem</option>
+                    </select>
+                    <label>Descrição:</label>
+                    <input title="Descrição da despesa:" type="text" placeholder="Digite uma descrição" id="descricao"/>
+                    <button id="btn-cadastrar" onclick=cadastrar(event)>Cadastrar</button>       
+                </form>
+        </section>
+        <section id="detalhes">
+            <h3>Despesas Detalhadas</h3>
+            <form>
+                <label>Despesa:</label>
+                <select id="despesa-detalhe">
+                    <option id="casa-detalhe">Casa</option>
+                    <option id="carro-detalhe">Carro</option>
+                    <option id="viagem-detalhe">Viagem</option>
+                </select>
+                <label>Valor Max.</label>
+                <input title="Valor maximo:" type="number" placeholder="Digite valor max" id="valor-maximo"/>
+                <label>Valor Min.</label>
+                <input title="Valor minimo:" type="number" placeholder="Digite valor min" id="valor-minimo"/>
+                <button id="btn-filtrar" onclick=filtrar(event)>Filtrar</button>
+                <button id="btn-limpar" onclick=limpar(event)>Limpar</button>
+            </form>
+            <ul id="listar">
+
+            </ul>
+        </section>
+        <section id="extrato">
+            <h4>Extrato</h4>
+            <ul id="imprimir">
+
+            </ul>
+        </section>
+    
+</body>
+</html>
