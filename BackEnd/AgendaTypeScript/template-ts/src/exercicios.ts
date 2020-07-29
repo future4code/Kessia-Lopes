@@ -40,8 +40,8 @@ const infoEvent = (events:event[]):void=>{
     const daysUntilEvent = item.startAt.diff(today,"days");
 
     console.log(`Nome: ${item.name}`)
-    console.log(`Horário de inicios: ${item.startAt.format("dddd, DD de MMMM de YYYY, HH:mm")}`)
-    console.log(`Horário de fim:${item.finishAt.format("DD de MMMM de YYYY, HH:mm")}`)
+    console.log(`Horário de inicios: ${item.startAt.format(" dddd, DD [de] MMMM [de] YYYY, HH:mm")}`)
+    console.log(`Horário de fim:${item.finishAt.format(" DD [de] MMMM [de] YYYY, HH:mm")}`)
     console.log(`Descrição:${item.description}`)
 
    } );
