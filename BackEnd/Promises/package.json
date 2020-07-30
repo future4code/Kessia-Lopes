@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node ./src/ex2.ts",
-    "build": "tsc && node ./build/ex2.js"
+    "start": "ts-node ./src/ex4.ts",
+    "build": "tsc && node ./build/ex4.js"
   },
   "author": "",
   "license": "ISC",
