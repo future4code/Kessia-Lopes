@@ -50,4 +50,36 @@ const infoEvent = (events:event[]):void=>{
  
 
 }
+
+
+const createEvent =(
+  name: string,
+  description: string,
+  startAt: moment.Moment,
+  finishAt: moment.Moment
+): void => {
+  if(!name || !description || !startAt || !finishAt){
+    console.log("Invalid input");
+    return;
+  }
+  const diffStartAtAndToday = startAt.diff(moment(),'seconds');
+  const diffFinishAtAndToday = finishAt.diff(moment(), 'seconds');
+
+  if (diffStartAtAndToday< 0 && diffFinishAtAndToday <0){
+    console.log("Date cannot be prior to the current date");
+    return;
+  }
+  allEvents.push({
+    name,
+    description,
+    startAt,
+    finishAt
+  });
+}
+createEvent(
+  "Academia",
+  "Fazer musculação",
+   moment("06/08/2020 08:00", "DD/MM/YYYY HH:mm"),
+   moment("06/08/2020 09:00", "DD/MM/YYYY HH:mm")
+);
 infoEvent(allEvents);
