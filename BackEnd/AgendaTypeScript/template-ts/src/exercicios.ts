@@ -43,6 +43,8 @@ const infoEvent = (events:event[]):void=>{
     console.log(`Horário de inicios: ${item.startAt.format(" dddd, DD [de] MMMM [de] YYYY, HH:mm")}`)
     console.log(`Horário de fim:${item.finishAt.format(" DD [de] MMMM [de] YYYY, HH:mm")}`)
     console.log(`Descrição:${item.description}`)
+    console.log(`Duração: ${duration} minutos`)
+    console.log(`Dias até o evento:${daysUntilEvent}`)
 
    } );
  
