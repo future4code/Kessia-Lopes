@@ -21,6 +21,7 @@ const mySeller = new Seller("1", "kessia@hotmail.com", "Kessia", "1234567", new 
 const secondSeller = new Seller("7", "Ana@hotmail.com", "Ana", "12345679", new Date("12-07-2020"), 10000 )
 //console.log(myUser)
 //console.log(myCustomer)
+//console.log(myCustomer.introduceYourself())
 //console.log(myEmployee)
 //console.log(myEmployee.calculateTotalSalary())
 //console.log(mySeller.getId())
