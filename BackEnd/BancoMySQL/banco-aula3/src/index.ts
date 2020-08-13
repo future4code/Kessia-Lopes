@@ -3,11 +3,11 @@ import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
 
-/**************************************************************/
+
 
 dotenv.config();
 
-/**************************************************************/
+
 
 const connection = knex({   
   client: "mysql",
@@ -20,7 +20,7 @@ const connection = knex({
   },
 });
 
-/**************************************************************/
+
 
 const app = express();
 
@@ -35,7 +35,7 @@ const server = app.listen(process.env.PORT || 3003, () => {
   }
 });
 
-/**************************************************************/
+
 
 app.get('/', testEndpoint)
 
@@ -50,3 +50,49 @@ async function testEndpoint(req:Request, res:Response): Promise<void>{
     res.status(400).send(error.message)
   }
 }
+
+const getActorByName = async(name: string): Promise<any> =>{
+  const result = await connection.raw(
+   ` SELECT * FROM Actor WHERE name = '${name}'`
+  )
+  return result [0][0]
+}
+//console.log(getActorByName)
+
+
+const countActors = async (gender: string): Promise<any> =>{
+  const result = await connection.raw(`
+  SELECT COUNT(*) as count FROM Actor WHERE gender = '${gender}'
+  `);
+  const count = result[0][0].count;
+  return count;
+}
+//console.log(countActors)
+
+const updateActor = async(id: string, salary: number): Promise<any> =>{
+  await connection('Actor')
+  .update({
+    salary: salary,
+  }).where('id',id);
+};
+//console.log(updateActor)
+
+const avgSalary = async (gender: string): Promise<any> =>{
+  const result = await connection('Actor')
+  .avg('salary as average').where({gender})
+  return result[0].average;
+}
+//console.log(avgSalary)
+
+app.get("/actor?gender=", async (req: Request, res: Response) => {
+  try {
+    const count = await countActors(req.query.gender as string);
+    res.status(200).send({
+      quantity: count,
+    });
+  } catch (err) {
+    res.status(400).send({
+      message: err.message,
+    });
+  }
+});
