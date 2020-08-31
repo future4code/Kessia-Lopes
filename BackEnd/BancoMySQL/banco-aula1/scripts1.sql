@@ -1,0 +1,10 @@
+SHOW DATABASES;
+SHOW TABLES;
+DESCRIBE Actor;
+SELECT * FROM Actor;
+SELECT id, salary from Actor;
+SELECT * from Actor WHERE gender = "female";
+SELECT salary from Actor WHERE name = "Tony Ramos";
+SELECT * from Actor WHERE gender = "invalid";
+SELECT id, name, salary from Actor WHERE salary < 500000;
+SELECT id, name from Actor WHERE id = "002";
